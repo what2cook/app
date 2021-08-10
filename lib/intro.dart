@@ -3,7 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'dart:async';
 
 import 'constants/theme.dart';
-import 'welcome.dart';
+import 'greeting.dart';
 
 class Intro extends StatefulWidget {
   @override
@@ -35,7 +35,7 @@ class IntroState extends State<Intro> {
 
   route() {
     Navigator.pushReplacement(context, MaterialPageRoute(
-      builder: (context) => Welcome()
+      builder: (context) => Greeting()
     ));
   }
 }
