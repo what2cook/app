@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-import 'constants/theme.dart';
-import 'greeting/login.dart';
-import 'greeting/welcome.dart';
+import 'package:what2cook/constants/theme.dart';
+import 'login.dart';
+import 'welcome.dart';
 
 class Greeting extends StatefulWidget {
   @override
@@ -31,9 +31,13 @@ class _GreetingState extends State<Greeting> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          FittedBox(
-              child: Image.asset('assets/images/greeting_background.jpg'),
-              fit: BoxFit.fill,
+          Container(
+              child: Image.asset(
+                  'assets/images/greeting_background.jpg',
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  fit: BoxFit.cover
+              ),
           ),
           Container(
             color: W2CColor.black.withOpacity(0.3),

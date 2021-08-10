@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'dart:async';
 
-import 'constants/theme.dart';
-import 'greeting.dart';
+import 'package:what2cook/constants/theme.dart';
+import 'package:what2cook/pages/greeting/index.dart';
 
 class Intro extends StatefulWidget {
   @override

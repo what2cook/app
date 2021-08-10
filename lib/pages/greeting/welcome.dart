@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../constants/theme.dart';
+import 'package:what2cook/constants/theme.dart';
 
 class Welcome extends StatelessWidget {
 
