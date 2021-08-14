@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:what2cook/constants/theme.dart';
-import 'package:what2cook/components/organisms/header.dart';
+import 'package:what2cook/components/molecules/search_box.dart';
 
 class Fridge extends StatefulWidget {
   @override
@@ -10,10 +10,19 @@ class Fridge extends StatefulWidget {
 
 class _FridgeState extends State<Fridge> {
 
+  void search(String word) {
+    print("search: $word");
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Header(),
+    return Column(
+      children: <Widget>[
+        Container(
+          margin: EdgeInsets.only(top: 20),
+          child: SearchBox(search),
+        ),
+      ],
     );
   }
 }

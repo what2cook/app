@@ -5,7 +5,7 @@ import 'package:what2cook/components/molecules/red_circle_arrow_button.dart';
 
 class Welcome extends StatelessWidget {
 
-  final VoidCallback _nextPage;
+  final Function() _nextPage;
 
   Welcome(this._nextPage);
 
@@ -42,7 +42,7 @@ class Welcome extends StatelessWidget {
               ),
               Container(
                 padding: EdgeInsets.only(right: 40),
-                child: RedCircleArrowButton(this._nextPage),
+                child: RedCircleArrowButton(_nextPage),
               ),
             ],
           ),

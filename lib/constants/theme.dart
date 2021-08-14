@@ -4,6 +4,7 @@ class W2CColor {
   static const Color red = Color(0xffe43630);
   static const Color white = Colors.white;
   static const Color black = Colors.black;
+  static const Color grey = Colors.grey;
 
   static const Color google = Colors.white;
   static const Color kakao = Color(0xfffee500);

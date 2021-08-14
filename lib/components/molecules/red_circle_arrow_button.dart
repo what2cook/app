@@ -5,7 +5,7 @@ import 'package:what2cook/components/atoms/arrow_icon.dart';
 
 class RedCircleArrowButton extends StatelessWidget {
 
-  final VoidCallback _onTap;
+  final Function() _onTap;
 
   RedCircleArrowButton(this._onTap);
 
@@ -20,7 +20,7 @@ class RedCircleArrowButton extends StatelessWidget {
       ),
       child: InkWell(
         onTap: () {
-          this._onTap();
+          _onTap();
         },
         child: ArrowIcon(),
       ),

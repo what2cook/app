@@ -7,16 +7,14 @@ import 'package:what2cook/components/atoms/white_logo.dart';
 
 class Intro extends StatefulWidget {
   @override
-  State<StatefulWidget> createState() {
-    return IntroState();
-  }
+  _IntroState createState() => _IntroState();
 }
 
-class IntroState extends State<Intro> {
+class _IntroState extends State<Intro> {
   @override
   void initState() {
     super.initState();
-    startTimer();
+    _startTimer();
   }
 
   @override
@@ -28,12 +26,12 @@ class IntroState extends State<Intro> {
     );
   }
 
-  startTimer() async {
-    var duration = new Duration(seconds: 2);
-    return new Timer(duration, route);
+  _startTimer() async {
+    var duration = Duration(seconds: 2);
+    return Timer(duration, _route);
   }
 
-  route() {
+  _route() {
     Navigator.pushReplacement(context, MaterialPageRoute(
       builder: (context) => Greeting()
     ));
