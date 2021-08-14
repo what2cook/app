@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'dart:async';
 
 import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/pages/greeting/index.dart';
+import 'package:what2cook/components/atoms/white_logo.dart';
 
 class Intro extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class IntroState extends State<Intro> {
     return Container(
       color: W2CColor.red,
       alignment: Alignment.center,
-      child: SvgPicture.asset('assets/images/logo_white.svg'),
+      child: WhiteLogo(),
     );
   }
 

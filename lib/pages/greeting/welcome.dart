@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:what2cook/constants/theme.dart';
+import 'package:what2cook/components/molecules/red_circle_arrow_button.dart';
 
 class Welcome extends StatelessWidget {
 
@@ -40,22 +41,8 @@ class Welcome extends StatelessWidget {
                 ),
               ),
               Container(
-                margin: EdgeInsets.only(right: 40),
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                  color: W2CColor.red,
-                  shape: BoxShape.circle,
-                ),
-                child: InkWell(
-                  onTap: () {
-                    this._nextPage();
-                  },
-                  child: Icon(
-                      Icons.arrow_forward,
-                      color: W2CColor.white
-                  ),
-                ),
+                padding: EdgeInsets.only(right: 40),
+                child: RedCircleArrowButton(this._nextPage),
               ),
             ],
           ),
