@@ -20,7 +20,7 @@ class _SearchBoxState extends State<SearchBox> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 300,
+      width: MediaQuery.of(context).size.width - 80,
       height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -33,7 +33,7 @@ class _SearchBoxState extends State<SearchBox> {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
-            width: 200,
+            width: MediaQuery.of(context).size.width - 180,
             height: 35,
             child: TextField(
               textAlign: TextAlign.center,
@@ -52,6 +52,7 @@ class _SearchBoxState extends State<SearchBox> {
           InkWell(
             onTap: () {
               _controller.clear();
+              widget._search('');
             },
             child: CancelIcon(),
           ),

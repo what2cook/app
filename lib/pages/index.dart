@@ -61,7 +61,7 @@ class _IndexState extends State<Index> {
         child: Column(
           children: <Widget>[
             Header(),
-            Container(
+            Expanded(
               child: _widgetOptions.elementAt(_selectedIndex),
             ),
           ],
