@@ -4,13 +4,15 @@ import 'package:what2cook/components/molecules/edit_button.dart';
 import 'package:what2cook/components/molecules/add_button.dart';
 import 'package:what2cook/components/molecules/remove_button.dart';
 import 'package:what2cook/components/molecules/close_button.dart';
+import 'package:what2cook/components/molecules/done_button.dart';
 
 class EditBox extends StatefulWidget {
 
-  final Function() add;
-  final Function() remove;
+  final Function() addMode;
+  final Function() removeMode;
+  final Function() doneMode;
 
-  EditBox(this.add, this.remove);
+  EditBox(this.addMode, this.removeMode, this.doneMode);
 
   @override
   _EditBoxState createState() => _EditBoxState();
@@ -32,6 +34,24 @@ class _EditBoxState extends State<EditBox> {
     });
   }
 
+  void add() {
+    setState(() {
+      _mode = 'add';
+    });
+  }
+
+  void remove() {
+    setState(() {
+      _mode = 'remove';
+    });
+  }
+
+  void done() {
+    setState(() {
+      _mode = 'close';
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     var editBox;
@@ -42,18 +62,32 @@ class _EditBoxState extends State<EditBox> {
     } else if (_mode == 'open'){
       editBox = [
         Container(
-          child: AddButton(widget.add),
+          child: AddButton(() {
+            widget.addMode();
+            add();
+          }),
         ),
         Container(
           margin: EdgeInsets.only(top: 5),
-          child: RemoveButton(widget.remove),
+          child: RemoveButton(() {
+            widget.removeMode();
+            remove();
+          }),
         ),
         Container(
           margin: EdgeInsets.only(top: 5),
           child: CloseButton(close),
         ),
       ];
+    } else if (_mode == 'add' || _mode == 'remove') {
+      editBox = [Container(
+        child: DoneButton(() {
+          widget.doneMode();
+          done();
+        }),
+      )];
     }
+
     return Container(
       height: 160,
       child: Column(

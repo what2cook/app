@@ -53,6 +53,7 @@ class _SearchBoxState extends State<SearchBox> {
             onTap: () {
               _controller.clear();
               widget._search('');
+              FocusScope.of(context).unfocus();
             },
             child: CancelIcon(),
           ),
