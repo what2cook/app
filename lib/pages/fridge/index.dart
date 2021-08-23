@@ -104,7 +104,7 @@ class _FridgeState extends State<Fridge> {
           children: <Widget>[
             Container(
               margin: EdgeInsets.only(top: 20),
-              child: SearchBox(search),
+              child: SearchBox(search, '재료를 검색하세요.'),
             ),
             Expanded(
               child: Container(

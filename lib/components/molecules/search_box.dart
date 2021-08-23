@@ -6,8 +6,9 @@ import 'package:what2cook/components/atoms/cancel_icon.dart';
 
 class SearchBox extends StatefulWidget {
   final Function(String) _search;
+  final String _hintText;
 
-  SearchBox(this._search);
+  SearchBox(this._search, this._hintText);
 
   @override
   _SearchBoxState createState() => _SearchBoxState();
@@ -41,7 +42,7 @@ class _SearchBoxState extends State<SearchBox> {
               decoration: InputDecoration(
                 fillColor: W2CColor.red,
                 border: UnderlineInputBorder(),
-                hintText: '재료를 검색하세요.',
+                hintText: widget._hintText,
               ),
               controller: _controller,
               onChanged: (String text) {
