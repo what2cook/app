@@ -5,7 +5,6 @@ import 'package:what2cook/components/molecules/small_add_button.dart';
 import 'package:what2cook/components/molecules/small_remove_button.dart';
 
 class IngredientCard extends StatelessWidget {
-
   final String name;
   final String mode;
   final Function(String) _onTap;

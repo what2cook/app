@@ -15,7 +15,6 @@ class SearchBox extends StatefulWidget {
 }
 
 class _SearchBoxState extends State<SearchBox> {
-
   final _controller = TextEditingController();
 
   @override
@@ -24,12 +23,11 @@ class _SearchBoxState extends State<SearchBox> {
       width: MediaQuery.of(context).size.width - 80,
       height: 50,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all(
-          color: W2CColor.grey,
-          width: 2,
-        )
-      ),
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(
+            color: W2CColor.grey,
+            width: 2,
+          )),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[

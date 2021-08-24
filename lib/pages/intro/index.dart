@@ -32,8 +32,7 @@ class _IntroState extends State<Intro> {
   }
 
   _route() {
-    Navigator.pushReplacement(context, MaterialPageRoute(
-      builder: (context) => Greeting()
-    ));
+    Navigator.pushReplacement(
+        context, MaterialPageRoute(builder: (context) => Greeting()));
   }
 }

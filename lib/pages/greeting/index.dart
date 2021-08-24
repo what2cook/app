@@ -10,14 +10,11 @@ class Greeting extends StatefulWidget {
 }
 
 class _GreetingState extends State<Greeting> {
-
   PageController _controller = PageController(initialPage: 0);
-  
+
   void nextPage() {
     _controller.nextPage(
-        duration: Duration(milliseconds: 400),
-        curve: Curves.easeIn
-    );
+        duration: Duration(milliseconds: 400), curve: Curves.easeIn);
   }
 
   @override
@@ -26,12 +23,10 @@ class _GreetingState extends State<Greeting> {
       body: Stack(
         children: <Widget>[
           Container(
-              child: Image.asset(
-                  'assets/images/greeting_background.jpg',
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                  fit: BoxFit.cover
-              ),
+            child: Image.asset('assets/images/greeting_background.jpg',
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+                fit: BoxFit.cover),
           ),
           Container(
             color: W2CColor.black.withOpacity(0.3),
@@ -48,6 +43,3 @@ class _GreetingState extends State<Greeting> {
     );
   }
 }
-
-
-

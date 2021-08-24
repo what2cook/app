@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/arrow_icon.dart';
 
 class RedCircleArrowButton extends StatelessWidget {
-
   final Function() _onTap;
 
   RedCircleArrowButton(this._onTap);

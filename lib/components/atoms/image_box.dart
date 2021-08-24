@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 class ImageBox extends StatelessWidget {
-
   final String url;
 
   ImageBox(this.url);

@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/add_icon.dart';
 
 class AddButton extends StatelessWidget {
-
   final Function() _onTap;
 
   AddButton(this._onTap);

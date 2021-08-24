@@ -9,7 +9,6 @@ class Recipe extends StatefulWidget {
 }
 
 class _RecipeState extends State<Recipe> {
-
   List<RecipeCard> _wholeList = [];
   List<RecipeCard> _showList = [];
 
@@ -27,8 +26,13 @@ class _RecipeState extends State<Recipe> {
   @override
   void initState() {
     super.initState();
-    for (int i=0; i<100; i++) {
-      _wholeList.add(RecipeCard('레시피${i}', 'http://file.okdab.com/recipe/148299577268400131.jpg', '30분', '보통', '콩'));
+    for (int i = 0; i < 100; i++) {
+      _wholeList.add(RecipeCard(
+          '레시피${i}',
+          'http://file.okdab.com/recipe/148299577268400131.jpg',
+          '30분',
+          '보통',
+          '콩'));
     }
     _showList = List.from(_wholeList);
   }
@@ -47,14 +51,13 @@ class _RecipeState extends State<Recipe> {
             margin: EdgeInsets.all(40),
             child: Scrollbar(
               child: ListView.builder(
-                itemCount: _showList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Container(
-                    height: 100,
-                    child: _showList[index],
-                  );
-                }
-              ),
+                  itemCount: _showList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return Container(
+                      height: 100,
+                      child: _showList[index],
+                    );
+                  }),
             ),
           ),
         ),

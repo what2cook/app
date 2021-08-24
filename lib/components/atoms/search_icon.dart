@@ -6,8 +6,8 @@ class SearchIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Icon(
-        Icons.search,
-        color: W2CColor.grey,
+      Icons.search,
+      color: W2CColor.grey,
     );
   }
 }

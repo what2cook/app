@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/done_icon.dart';
 
 class DoneButton extends StatelessWidget {
-
   final Function() _onTap;
 
   DoneButton(this._onTap);

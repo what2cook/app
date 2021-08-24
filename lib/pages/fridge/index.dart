@@ -10,7 +10,6 @@ class Fridge extends StatefulWidget {
 }
 
 class _FridgeState extends State<Fridge> {
-
   String _mode = 'normal';
   String _searchWord = '';
   List<IngredientCard> _wholeList = [];
@@ -86,11 +85,11 @@ class _FridgeState extends State<Fridge> {
   @override
   void initState() {
     super.initState();
-    for (int i=0; i<100; i++) {
-      _wholeList.add(IngredientCard('재료 $i', 'normal', doNothing));  // api로 대체
+    for (int i = 0; i < 100; i++) {
+      _wholeList.add(IngredientCard('재료 $i', 'normal', doNothing)); // api로 대체
     }
-    for (int i=10; i<30; i++) {
-      _myList.add(IngredientCard('재료 $i', 'normal', doNothing));  // api로 대체
+    for (int i = 10; i < 30; i++) {
+      _myList.add(IngredientCard('재료 $i', 'normal', doNothing)); // api로 대체
     }
     initShowList();
   }

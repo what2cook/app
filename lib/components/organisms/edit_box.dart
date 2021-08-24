@@ -7,7 +7,6 @@ import 'package:what2cook/components/molecules/close_button.dart';
 import 'package:what2cook/components/molecules/done_button.dart';
 
 class EditBox extends StatefulWidget {
-
   final Function() addMode;
   final Function() removeMode;
   final Function() doneMode;
@@ -19,7 +18,6 @@ class EditBox extends StatefulWidget {
 }
 
 class _EditBoxState extends State<EditBox> {
-
   String _mode = 'close';
 
   void open() {
@@ -56,10 +54,12 @@ class _EditBoxState extends State<EditBox> {
   Widget build(BuildContext context) {
     var editBox;
     if (_mode == 'close') {
-      editBox = [Container(
-        child: EditButton(open),
-      )];
-    } else if (_mode == 'open'){
+      editBox = [
+        Container(
+          child: EditButton(open),
+        )
+      ];
+    } else if (_mode == 'open') {
       editBox = [
         Container(
           child: AddButton(() {
@@ -80,12 +80,14 @@ class _EditBoxState extends State<EditBox> {
         ),
       ];
     } else if (_mode == 'add' || _mode == 'remove') {
-      editBox = [Container(
-        child: DoneButton(() {
-          widget.doneMode();
-          done();
-        }),
-      )];
+      editBox = [
+        Container(
+          child: DoneButton(() {
+            widget.doneMode();
+            done();
+          }),
+        )
+      ];
     }
 
     return Container(

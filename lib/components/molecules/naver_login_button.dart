@@ -25,9 +25,8 @@ class NaverLoginButton extends StatelessWidget {
             margin: EdgeInsets.only(right: 40),
             child: Text(
               '네이버 계정으로 로그인',
-              style: W2CTextStyle.notosans_regular_20.merge(
-                  TextStyle(color: W2CColor.white)
-              ),
+              style: W2CTextStyle.notosans_regular_20
+                  .merge(TextStyle(color: W2CColor.white)),
             ),
           ),
         ],

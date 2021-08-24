@@ -76,4 +76,3 @@ class W2CTextStyle {
     height: 1.5,
   );
 }
-

@@ -25,11 +25,7 @@ class Login extends StatelessWidget {
                   alignment: Alignment.centerRight,
                   widthFactor: 0.5,
                   heightFactor: 0.5,
-                  child: Container(
-                      color: W2CColor.white
-                  )
-              )
-          ),
+                  child: Container(color: W2CColor.white))),
         ],
       ),
     );

@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/close_icon.dart';
 
 class CloseButton extends StatelessWidget {
-
   final Function() _onTap;
 
   CloseButton(this._onTap);

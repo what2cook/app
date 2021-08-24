@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/edit_icon.dart';
 
 class EditButton extends StatelessWidget {
-
   final Function() _onTap;
 
   EditButton(this._onTap);

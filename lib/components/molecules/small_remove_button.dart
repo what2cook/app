@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/remove_icon.dart';
 
 class SmallRemoveButton extends StatelessWidget {
-
   final Function() _onTap;
 
   SmallRemoveButton(this._onTap);

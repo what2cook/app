@@ -13,7 +13,6 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
-
   int _selectedIndex = 0;
   List _widgetOptions = [
     Fridge(),

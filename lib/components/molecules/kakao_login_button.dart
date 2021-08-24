@@ -18,16 +18,13 @@ class KakaoLoginButton extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
           Container(
-            margin: EdgeInsets.only(left: 10),
-            padding: EdgeInsets.all(10),
-            child: KakaoIcon()
-          ),
+              margin: EdgeInsets.only(left: 10),
+              padding: EdgeInsets.all(10),
+              child: KakaoIcon()),
           Container(
             margin: EdgeInsets.only(right: 40),
-            child: Text(
-                '카카오 계정으로 로그인',
-                style: W2CTextStyle.notosans_regular_20
-            ),
+            child:
+                Text('카카오 계정으로 로그인', style: W2CTextStyle.notosans_regular_20),
           ),
         ],
       ),
