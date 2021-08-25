@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:what2cook/components/molecules/search_box.dart';
 import 'package:what2cook/components/molecules/ingredient_card.dart';
 import 'package:what2cook/components/organisms/edit_box.dart';
+import 'package:what2cook/api/fridge.dart';
 
 class Fridge extends StatefulWidget {
   @override
@@ -16,8 +17,13 @@ class _FridgeState extends State<Fridge> {
   List<IngredientCard> _showList = [];
   List<IngredientCard> _myList = [];
 
+  void initMyList() {
+    fridgeApi.getMyList().then((res) {
+      _myList = res;
+    });
+  }
+
   void initShowList() {
-    _myList.sort((a, b) => a.name.compareTo(b.name));
     if (_mode == 'normal') {
       _showList = List.from(_myList);
     } else if (_mode == 'add') {
@@ -38,23 +44,23 @@ class _FridgeState extends State<Fridge> {
   }
 
   void search(String word) {
+    _searchWord = word;
+    initShowList();
     setState(() {
-      _searchWord = word;
-      initShowList();
       _showList = _showList.where((card) => card.name.contains(word)).toList();
     });
   }
 
   void add(String name) {
-    setState(() {
-      _myList.add(IngredientCard(name, 'normal', doNothing));
+    fridgeApi.addIngredient(name).then((res) {
+      initMyList();
       search(_searchWord);
     });
   }
 
   void remove(String name) {
-    setState(() {
-      _myList.removeWhere((card) => card.name == name);
+    fridgeApi.removeIngredient(name).then((res) {
+      initMyList();
       search(_searchWord);
     });
   }
@@ -62,36 +68,32 @@ class _FridgeState extends State<Fridge> {
   void doNothing(String nothing) {}
 
   void addMode() {
-    setState(() {
-      _mode = 'add';
-      search(_searchWord);
-    });
+    _mode = 'add';
+    search(_searchWord);
   }
 
   void removeMode() {
-    setState(() {
-      _mode = 'remove';
-      search(_searchWord);
-    });
+    _mode = 'remove';
+    search(_searchWord);
   }
 
   void doneMode() {
-    setState(() {
-      _mode = 'normal';
-      search(_searchWord);
-    });
+    _mode = 'normal';
+    search(_searchWord);
   }
 
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < 100; i++) {
-      _wholeList.add(IngredientCard('재료 $i', 'normal', doNothing)); // api로 대체
-    }
-    for (int i = 10; i < 30; i++) {
-      _myList.add(IngredientCard('재료 $i', 'normal', doNothing)); // api로 대체
-    }
-    initShowList();
+    fridgeApi.getWholeList().then((res) {
+      _wholeList = res;
+    });
+    fridgeApi.getMyList().then((res) {
+      _myList = res;
+      setState(() {
+        initShowList();
+      });
+    });
   }
 
   @override
