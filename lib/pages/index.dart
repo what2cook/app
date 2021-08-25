@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:what2cook/constants/theme.dart';
+import 'package:what2cook/pages/greeting/index.dart';
 import 'package:what2cook/pages/fridge/index.dart';
 import 'package:what2cook/pages/recipe/index.dart';
 import 'package:what2cook/pages/favorite/index.dart';
 import 'package:what2cook/components/organisms/header.dart';
+import 'package:what2cook/api/user.dart';
 
 class Index extends StatefulWidget {
   @override
@@ -12,6 +14,7 @@ class Index extends StatefulWidget {
 }
 
 class _IndexState extends State<Index> {
+  bool _isLoggedIn = false;
   int _selectedIndex = 0;
   List _widgetOptions = [
     Fridge(),
@@ -19,9 +22,19 @@ class _IndexState extends State<Index> {
     Favorite(),
   ];
 
+  void login(String provider) {
+    userApi.login(provider).then((res) {
+      if (res) {
+        setState(() {
+          _isLoggedIn = true;
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return _isLoggedIn ? Scaffold(
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: W2CColor.red,
@@ -60,6 +73,7 @@ class _IndexState extends State<Index> {
           ],
         ),
       ),
-    );
+    )
+        : Greeting(login);
   }
 }

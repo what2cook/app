@@ -5,6 +5,10 @@ import 'login.dart';
 import 'welcome.dart';
 
 class Greeting extends StatefulWidget {
+  final login;
+
+  Greeting(this.login);
+
   @override
   _GreetingState createState() => _GreetingState();
 }
@@ -35,7 +39,7 @@ class _GreetingState extends State<Greeting> {
             controller: _controller,
             children: [
               Welcome(() => nextPage()),
-              Login(),
+              Login(widget.login),
             ],
           ),
         ],

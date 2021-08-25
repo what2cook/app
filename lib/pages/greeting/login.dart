@@ -4,6 +4,10 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/organisms/login_box.dart';
 
 class Login extends StatelessWidget {
+  final login;
+
+  Login(this.login);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,7 +19,7 @@ class Login extends StatelessWidget {
         children: <Widget>[
           Container(
             margin: EdgeInsets.only(right: 40, bottom: 100),
-            child: LoginBox(),
+            child: LoginBox(login),
           ),
           Container(
               margin: EdgeInsets.only(right: 40),

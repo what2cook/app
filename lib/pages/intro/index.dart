@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:what2cook/constants/theme.dart';
-import 'package:what2cook/pages/greeting/index.dart';
+import 'package:what2cook/pages/index.dart';
 import 'package:what2cook/components/atoms/white_logo.dart';
 
 class Intro extends StatefulWidget {
@@ -33,6 +33,6 @@ class _IntroState extends State<Intro> {
 
   _route() {
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Greeting()));
+        context, MaterialPageRoute(builder: (context) => Index()));
   }
 }
