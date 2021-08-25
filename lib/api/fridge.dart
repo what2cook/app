@@ -1,7 +1,6 @@
 import 'package:what2cook/components/molecules/ingredient_card.dart';
 
 class FridgeApi {
-
   List<IngredientCard> _wholeList = [];
   List<IngredientCard> _myList = [];
 

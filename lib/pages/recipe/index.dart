@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:what2cook/components/molecules/search_box.dart';
 import 'package:what2cook/components/molecules/recipe_card.dart';
+import 'package:what2cook/api/recipe.dart';
 
 class Recipe extends StatefulWidget {
   @override
@@ -17,8 +18,8 @@ class _RecipeState extends State<Recipe> {
   }
 
   void search(String word) {
+    initShowList();
     setState(() {
-      initShowList();
       _showList = _showList.where((card) => card.name.contains(word)).toList();
     });
   }
@@ -26,15 +27,12 @@ class _RecipeState extends State<Recipe> {
   @override
   void initState() {
     super.initState();
-    for (int i = 0; i < 100; i++) {
-      _wholeList.add(RecipeCard(
-          '레시피${i}',
-          'http://file.okdab.com/recipe/148299577268400131.jpg',
-          '30분',
-          '보통',
-          '콩'));
-    }
-    _showList = List.from(_wholeList);
+    recipeApi.getWholeList().then((res) {
+      _wholeList = res;
+      setState(() {
+        _showList = List.from(_wholeList);
+      });
+    });
   }
 
   @override
