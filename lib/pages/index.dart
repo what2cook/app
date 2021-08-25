@@ -4,7 +4,6 @@ import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/pages/fridge/index.dart';
 import 'package:what2cook/pages/recipe/index.dart';
 import 'package:what2cook/pages/favorite/index.dart';
-import 'package:what2cook/pages/setting/index.dart';
 import 'package:what2cook/components/organisms/header.dart';
 
 class Index extends StatefulWidget {
@@ -18,7 +17,6 @@ class _IndexState extends State<Index> {
     Fridge(),
     Recipe(),
     Favorite(),
-    Setting(),
   ];
 
   @override
@@ -49,10 +47,6 @@ class _IndexState extends State<Index> {
           BottomNavigationBarItem(
             label: '즐겨찾기',
             icon: Icon(Icons.star),
-          ),
-          BottomNavigationBarItem(
-            label: '설정',
-            icon: Icon(Icons.settings),
           ),
         ],
       ),
