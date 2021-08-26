@@ -32,41 +32,60 @@ class _IndexState extends State<Index> {
     });
   }
 
+  void setting() {
+    print('setting');
+  }
+
+  void logout() {
+    userApi.logout().then((res) {
+      if (res) {
+        setState(() {
+          _isLoggedIn = false;
+        });
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return _isLoggedIn ? Scaffold(
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        backgroundColor: W2CColor.red,
-        selectedItemColor: W2CColor.white,
-        unselectedItemColor: W2CColor.white.withOpacity(0.6),
-        selectedFontSize: 14,
-        unselectedFontSize: 14,
-        currentIndex: _selectedIndex,
-        onTap: (int index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: '나의 냉장고',
-            icon: Icon(Icons.kitchen),
-          ),
-          BottomNavigationBarItem(
-            label: '레시피',
-            icon: Icon(Icons.menu_book),
-          ),
-          BottomNavigationBarItem(
-            label: '즐겨찾기',
-            icon: Icon(Icons.star),
-          ),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          boxShadow: [W2CShadow.big],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          backgroundColor: W2CColor.white,
+          selectedItemColor: W2CColor.red,
+          unselectedItemColor: W2CColor.grey,
+          selectedLabelStyle: W2CTextStyle.notosans_bold_15,
+          unselectedLabelStyle: W2CTextStyle.notosans_regular_15,
+          currentIndex: _selectedIndex,
+          onTap: (int index) {
+            setState(() {
+              _selectedIndex = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: '나의 냉장고',
+              icon: Icon(Icons.kitchen),
+            ),
+            BottomNavigationBarItem(
+              label: '레시피',
+              icon: Icon(Icons.menu_book),
+            ),
+            BottomNavigationBarItem(
+              label: '즐겨찾기',
+              icon: Icon(Icons.star),
+            ),
+          ],
+        ),
       ),
       body: SafeArea(
         child: Column(
           children: <Widget>[
-            Header(),
+            Header(logout, setting),
             Expanded(
               child: _widgetOptions.elementAt(_selectedIndex),
             ),

@@ -3,6 +3,11 @@ class UserApi {
     print('Login with ${provider}');
     return true;
   }
+
+  Future<bool> logout() async {
+    print('Logout');
+    return true;
+  }
 }
 
 final userApi = UserApi();

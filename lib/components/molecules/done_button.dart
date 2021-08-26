@@ -16,6 +16,7 @@ class DoneButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: W2CColor.red,
         shape: BoxShape.circle,
+        boxShadow: [W2CShadow.big],
       ),
       child: InkWell(
         onTap: () {

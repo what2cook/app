@@ -56,6 +56,16 @@ class _EditBoxState extends State<EditBox> {
     if (_mode == 'close') {
       editBox = [
         Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 10,
+                offset: Offset(0, 3),
+              ),
+            ],
+          ),
           child: EditButton(open),
         )
       ];

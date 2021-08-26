@@ -23,11 +23,14 @@ class _SearchBoxState extends State<SearchBox> {
       width: MediaQuery.of(context).size.width - 80,
       height: 50,
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(
-            color: W2CColor.grey,
-            width: 2,
-          )),
+        color: W2CColor.white,
+        borderRadius: BorderRadius.circular(10),
+        border: Border.all(
+          color: W2CColor.red,
+          width: 2,
+        ),
+        boxShadow: [W2CShadow.small],
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[

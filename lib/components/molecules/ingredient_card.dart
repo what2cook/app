@@ -24,10 +24,12 @@ class IngredientCard extends StatelessWidget {
     Widget defaultCard = Container(
       alignment: Alignment.center,
       decoration: BoxDecoration(
+        color: W2CColor.white,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
-          color: W2CColor.grey,
+          color: W2CColor.red,
         ),
+        boxShadow: [W2CShadow.small],
       ),
       child: Text(
         name,

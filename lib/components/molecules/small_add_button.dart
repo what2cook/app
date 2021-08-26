@@ -16,6 +16,7 @@ class SmallAddButton extends StatelessWidget {
       decoration: BoxDecoration(
         color: W2CColor.red,
         shape: BoxShape.circle,
+        boxShadow: [W2CShadow.small],
       ),
       child: InkWell(
         onTap: () {

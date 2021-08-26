@@ -7,7 +7,7 @@ class SearchIcon extends StatelessWidget {
   Widget build(BuildContext context) {
     return Icon(
       Icons.search,
-      color: W2CColor.grey,
+      color: W2CColor.red,
     );
   }
 }
