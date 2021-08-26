@@ -38,6 +38,7 @@ class RecipeCard extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: <Widget>[
               Container(
+                padding: EdgeInsets.all(10),
                 alignment: Alignment.center,
                 child: ImageBox(image),
               ),

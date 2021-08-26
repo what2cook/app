@@ -8,9 +8,12 @@ class ImageBox extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 100,
-      height: 100,
-      child: Image.network(url),
+      width: 80,
+      height: 80,
+      child: Image.network(
+        url,
+        fit: BoxFit.contain,
+      ),
     );
   }
 }
