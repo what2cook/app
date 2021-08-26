@@ -52,6 +52,7 @@ class _FavoriteState extends State<Favorite> {
                   itemCount: _showList.length,
                   itemBuilder: (BuildContext context, int index) {
                     return Container(
+                      margin: EdgeInsets.only(top: 5, bottom: 5),
                       height: 100,
                       child: _showList[index],
                     );

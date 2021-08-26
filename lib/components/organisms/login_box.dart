@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:what2cook/components/molecules/google_login_button.dart';
 import 'package:what2cook/components/molecules/kakao_login_button.dart';
 import 'package:what2cook/components/molecules/naver_login_button.dart';
-import 'package:what2cook/api/user.dart';
 
 class LoginBox extends StatelessWidget {
   final login;

@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
 import 'package:what2cook/constants/theme.dart';
+import 'package:what2cook/pages/index.dart';
 import 'package:what2cook/pages/intro/index.dart';
+import 'package:what2cook/pages/recipe/index.dart';
+import 'package:what2cook/pages/recipe/detail.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +19,13 @@ class MyApp extends StatelessWidget {
         primaryColor: W2CColor.red,
         accentColor: W2CColor.red,
       ),
-      home: Intro(),
+      routes: {
+        '/': (context) => Index(),
+        '/intro': (context) => Intro(),
+        '/recipe': (context) => Recipe(),
+        '/recipe/detail': (context) => Detail(),
+      },
+      initialRoute: '/intro',
       debugShowCheckedModeBanner: false,
     );
   }

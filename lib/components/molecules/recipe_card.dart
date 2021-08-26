@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/components/atoms/image_box.dart';
+import 'package:what2cook/entities/recipe.dart';
 
 class RecipeCard extends StatelessWidget {
   final String name;
@@ -16,9 +17,18 @@ class RecipeCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          '/recipe/detail',
+          arguments: DetailArguments(name),
+        );
+      },
       child: Container(
-        decoration: BoxDecoration(border: Border.all(color: W2CColor.grey)),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          border: Border.all(color: W2CColor.red),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[

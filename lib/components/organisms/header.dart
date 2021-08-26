@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:what2cook/components/atoms/red_logo.dart';
+import 'package:what2cook/components/atoms/back_icon.dart';
 
 class Header extends StatelessWidget {
   @override
