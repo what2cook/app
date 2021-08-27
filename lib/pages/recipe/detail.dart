@@ -48,7 +48,6 @@ class _DetailState extends State<Detail> {
     });
     recipeApi.getDetail(name).then((res) {
       Widget head = Container(
-        color: W2CColor.white,
         height: 80,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -23,7 +23,7 @@ class GoogleLoginButton extends StatelessWidget {
             child: GoogleIcon(),
           ),
           Container(
-            margin: EdgeInsets.only(right: 50),
+            margin: EdgeInsets.only(right: 45),
             child: Text('구글 계정으로 로그인', style: W2CTextStyle.notosans_regular_20),
           ),
         ],
