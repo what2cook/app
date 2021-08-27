@@ -15,6 +15,14 @@ class RecipeCard extends StatelessWidget {
       this.name, this.image, this.duration, this.difficulty, this.shortage);
 
   @override
+  bool operator ==(Object other) {
+    return other is RecipeCard && name == other.name;
+  }
+
+  @override
+  int get hashCode => name.hashCode;
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(

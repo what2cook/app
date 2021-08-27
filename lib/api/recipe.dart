@@ -38,6 +38,7 @@ class RecipeApi {
   }
 
   Future<List<RecipeCard>> getFavoriteList() async {
+    _favoriteList.sort((a, b) => a.name.compareTo(b.name));
     return _favoriteList;
   }
 
@@ -50,6 +51,36 @@ class RecipeApi {
       '콩',
       _detailLIst,
     );
+  }
+
+  Future<bool> isFavorite(String name) async {
+    return _favoriteList.contains(RecipeCard(
+      name,
+      '',
+      '',
+      '',
+      '',
+    ));
+  }
+
+  Future<bool> addFavorite(String name) async {
+    _favoriteList.add(RecipeCard(
+        name,
+        'http://file.okdab.com/recipe/148299577268400131.jpg',
+        '30분',
+        '보통',
+        '콩'));
+    return true;
+  }
+
+  Future<bool> removeFavorite(String name) async {
+    _favoriteList.remove(RecipeCard(
+        name,
+        'http://file.okdab.com/recipe/148299577268400131.jpg',
+        '30분',
+        '보통',
+        '콩'));
+    return true;
   }
 }
 

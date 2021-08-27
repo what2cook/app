@@ -109,7 +109,7 @@ class _FridgeState extends State<Fridge> {
             ),
             Expanded(
               child: Container(
-                margin: EdgeInsets.all(40),
+                margin: EdgeInsets.only(top: 20, bottom: 20, left: 40, right: 40),
                 child: Scrollbar(
                   child: GridView.count(
                     crossAxisCount: 3,
