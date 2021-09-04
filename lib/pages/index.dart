@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
 
 import 'package:what2cook/constants/theme.dart';
 import 'package:what2cook/pages/greeting/index.dart';
@@ -44,6 +45,12 @@ class _IndexState extends State<Index> {
         });
       }
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    _isLoggedIn = Hive.box('local').get('id') != null;
   }
 
   @override

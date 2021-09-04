@@ -24,6 +24,13 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: 0.21.0-nullsafety.0
+  uni_links: ^0.5.1
+  url_launcher: ^5.7.10
+  hive: ^1.4.1+1
+  hive_flutter: ^0.3.0+2
+
+dependency_overrides:
+  plugin_platform_interface: ^2.0.0
 
 dev_dependencies:
   flutter_test:
